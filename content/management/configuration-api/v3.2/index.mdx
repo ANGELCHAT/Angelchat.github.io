@@ -2785,6 +2785,239 @@ curl -X POST \
 
 </Section>
 
+# Auto access rules
+
+## Methods
+
+<Section>
+
+<Text>
+
+### Add auto access rules
+
+
+#### Specifics
+
+|                |                                                                               |
+| -------------- | ----------------------------------------------------------------------------- |
+| Method URL     | `https://api.livechatinc.com/v3.2/configuration/action/add_auto_access_rules` |
+| Required scopes| `access_rules:rw`                                                             |
+
+
+| Parameter      | Required     | Data type | Notes                         |
+| -------------- | ------------ | --------- | ----------------------------- |
+| `access`__*__  | Yes          | `object`  | Destination scope             |
+| `rules`__**__   | Yes          | `object`  | Rules to check for scope auto |
+| `description`  | No           | `string`  | Auto chat scopes description  |
+
+__*__ `access` object:
+  * `access`
+    * `groups`: `[1, 2]`
+    * `agents`: `["john@doe.com"]`
+
+__**__ `rules` possible rules:
+  * `chat_properties.<namespace>.<name>.<filter_type>`
+    * `<filter_type>` possible values (only one is allowed for single property):
+      * `exists` (`bool`)
+      * `values` (`type[]` - array with specific type for property: `string`, `int` or `bool`)
+      * `exclude_values` (`type[]` - array with specific type for property: `string`, `int` or `bool`)
+  * `customer_url.<string_filter_type>`
+    * `<string_filter_type>` possible values (only one is allowed for single customer_url):
+      * `values` (`match_object[]`)
+      * `exclude_values` (`match_object[]`)
+    * `<match_object>` structure:
+      * `value` - value to match (`string`)
+      * `exact_match` - if exact match, if set to `false` a `match_object.value` will be matched as substring of `customer_url`
+
+
+</Text>
+
+<Code>
+
+<CodeSample path={'REQUEST'}>
+
+```shell
+curl -X POST \
+  https://api.livechatinc.com/v3.2/configuration/action/add_auto_access_rules \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer <your_access_token>' \
+  -d '{
+      "description": "Chats from Facebook or Twitter",
+      "access": {
+        "groups": [1]
+      },
+      "rules": {
+        "chat_properties": {
+          "source": {
+            "type": {
+              "values": ["facebook", "twitter"]
+            }
+          },
+          "facebook": {
+            "page_id": {
+              "values": ["63121487121"]
+            }
+          }
+        },
+        "customer_url": {
+          "values": [{
+            "value": "livechatinc.com",
+            "exact_match": false
+          }]
+        }
+      }
+    }'
+```
+
+</CodeSample>
+
+<CodeResponse>
+
+```json
+{
+  "auto_access_rules_id": "pqi8oasdjahuakndw9nsad9na"
+}
+```
+
+</CodeResponse>
+
+</Code>
+
+</Section>
+
+<Section>
+
+<Text>
+
+### Get auto access rules config
+
+.
+
+#### Specifics
+
+|                |                                                                                      |
+| -------------- | ------------------------------------------------------------------------------------ |
+| Method URL     | `https://api.livechatinc.com/v3.2/configuration/action/get_auto_access_rules_config` |
+| Required scopes| `access_rules:ro`                                                                    |
+
+</Text>
+
+<Code>
+
+<CodeSample path={'REQUEST'}>
+
+```shell
+curl -X POST \
+  https://api.livechatinc.com/v3.2/configuration/action/get_auto_access_rules_config \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer <your_access_token>' \
+  -d '{}'
+```
+
+</CodeSample>
+
+<CodeResponse>
+
+```json
+{
+     [
+        {
+            "id": "1faad6f5f1d6e8fdf27e8af9839783b7",
+            "description": "Chats from Facebook or Twitter",
+            "access": {
+                "groups": [
+                    0
+                ]
+            },
+            "rules": {
+                "chat_properties": {
+                    "facebook": {
+                        "page_id": {
+                            "values": [
+                                "63121487121"
+                            ]
+                        }
+                    },
+                    "source": {
+                        "type": {
+                            "values": [
+                                "facebook",
+                                "twitter"
+                            ]
+                        }
+                    }
+                },
+                "customer_url": {
+                    "values": [
+                        {
+                            "value": "livechatinc.com",
+                            "exact_match": false
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
+
+</CodeResponse>
+
+</Code>
+
+</Section>
+
+<Section>
+
+<Text>
+
+### Remove auto access rules
+
+.
+
+#### Specifics
+
+|                |                                                                                  |
+| -------------- | -------------------------------------------------------------------------------- |
+| Method URL     | `https://api.livechatinc.com/v3.2/configuration/action/remove_auto_access_rules` |
+| Required scopes| `access_rules:rw`                                                                |
+
+
+| Parameter              | Required     | Data type | Notes                         |
+| ---------------------- | ------------ | --------- | ----------------------------- |
+| `auto_access_rules_id` | Yes          | `string`  | auto access rules ID          |
+
+</Text>
+
+<Code>
+
+<CodeSample path={'REQUEST'}>
+
+```shell
+curl -X POST \
+  https://api.livechatinc.com/v3.2/configuration/action/remove_auto_access_rules \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer <your_access_token>' \
+  -d '{
+    "auto_access_rules_id": "pqi8oasdjahuakndw9nsad9na"
+  }'
+```
+
+</CodeSample>
+
+<CodeResponse>
+
+```json
+{
+}
+```
+
+</CodeResponse>
+
+</Code>
+
+</Section>
+
 # Contact us
 
 If you found a bug or a typo, you can let us know directly on GitHub. In case of any questions or feedback, don't hesitate to contact us at [developers@livechatinc.com] (mailto:developers@livechatinc.com). We'll be happy to hear from you!
