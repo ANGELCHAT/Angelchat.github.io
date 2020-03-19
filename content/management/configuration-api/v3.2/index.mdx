@@ -2828,6 +2828,19 @@ __**__ `rules` possible rules:
     * `<match_object>` structure:
       * `value` - value to match (`string`)
       * `exact_match` - if exact match, if set to `false` a `match_object.value` will be matched as substring of `customer_url`
+  * `customer_domain.<string_filter_type>`
+    * `<string_filter_type>` possible values (only one is allowed for single customer_url):
+      * `values` (`match_object[]`)
+      * `exclude_values` (`match_object[]`)
+    * `<match_object>` structure:
+      * `value` - value to match (`string`)
+      * `exact_match` - if exact match, if set to `false` a `match_object.value` will be matched as substring of `customer_url`
+  * `customer_geolocation`
+    * `values` (`type[]` - array of objects with optional values, at least one must be set):
+      * `country`, eg. "United States
+      * `country_code`, eg. "US"
+      * `region`, eg. "California"
+      * `city`, eg. "Mountain View"
 
 
 </Text>
