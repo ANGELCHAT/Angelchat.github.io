@@ -2787,6 +2787,10 @@ curl -X POST \
 
 # Auto access rules
 
+Auto access rules allow to assign groups to customer session according to their tracking url and geolocation.  Those rules are
+checked on **Login** and **Update Customer Page** and resulting groups stored in customer session.  When that session starts chat with **Start Chat**
+or **Activate Chat** without `chat.access` stored session groups are used as new thread's access.
+
 ## Methods
 
 <Section>
@@ -2806,36 +2810,33 @@ curl -X POST \
 
 | Parameter      | Required     | Data type | Notes                         |
 | -------------- | ------------ | --------- | ----------------------------- |
-| `access`__*__  | Yes          | `object`  | Destination scope             |
-| `rules`__**__   | Yes          | `object`  | Rules to check for scope auto |
+| `access`__*__  | Yes          | `object`  | Destination access            |
+| `rules`__**__  | Yes          | `object`  | Rules to check for scope auto |
 | `description`  | No           | `string`  | Auto chat scopes description  |
 
 __*__ `access` object:
-  * `access`
     * `groups`: `[1, 2]`
-    * `agents`: `["john@doe.com"]`
 
 __**__ `rules` possible rules:
-  * `customer_url.<string_filter_type>`
+  * `customer_url.<string_filter_type>` - matches on `customer_page.url` from **Login** or `url` from **Update Customer Page**
     * `<string_filter_type>` possible values (only one is allowed for single customer_url):
-      * `values` (`match_object[]`)
-      * `exclude_values` (`match_object[]`)
+      * `values` (array of `match_object`)
+      * `exclude_values` (array of `match_object`)
     * `<match_object>` structure:
       * `value` - value to match (`string`)
       * `exact_match` - if exact match, if set to `false` a `match_object.value` will be matched as substring of `customer_url`
-  * `customer_domain.<string_filter_type>`
+  * `customer_domain.<string_filter_type>` - works same as rule above but works on domain part only
     * `<string_filter_type>` possible values (only one is allowed for single customer_url):
-      * `values` (`match_object[]`)
-      * `exclude_values` (`match_object[]`)
+      * `values` (array of `match_object`)
+      * `exclude_values` (array of `match_object`)
     * `<match_object>` structure:
       * `value` - value to match (`string`)
       * `exact_match` - if exact match, if set to `false` a `match_object.value` will be matched as substring of `customer_url`
-  * `customer_geolocation`
-    * `values` (`type[]` - array of objects with optional values, at least one must be set):
-      * `country`, eg. "United States
-      * `country_code`, eg. "US"
-      * `region`, eg. "California"
-      * `city`, eg. "Mountain View"
+  * `customer_geolocation.values` - array of objects with optional values, at least one must be set; matches when at least one subrule matches
+    * `country`, eg. "United States
+    * `country_code`, eg. "US"
+    * `region`, eg. "California"
+    * `city`, eg. "Mountain View"
 
 
 </Text>
@@ -2850,29 +2851,23 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer <your_access_token>' \
   -d '{
-      "description": "Chats from Facebook or Twitter",
+      "description": "Chats on livechat.com from United States",
       "access": {
         "groups": [1]
       },
       "rules": {
-        "chat_properties": {
-          "source": {
-            "type": {
-              "values": ["facebook", "twitter"]
-            }
-          },
-          "facebook": {
-            "page_id": {
-              "values": ["63121487121"]
-            }
-          }
-        },
-        "customer_url": {
+        "customer_domain": {
           "values": [{
-            "value": "livechatinc.com",
-            "exact_match": false
+            "value": "livechat.com",
+            "exact_match": true
           }]
-        }
+        },
+        "customer_geolocation": {
+          "values": [{
+              "country": "United States",
+              "country_code": "US"
+            }
+        }]
       }
     }'
 ```
@@ -2898,8 +2893,6 @@ curl -X POST \
 <Text>
 
 ### Get auto access rules config
-
-.
 
 #### Specifics
 
@@ -2980,8 +2973,6 @@ curl -X POST \
 <Text>
 
 ### Remove auto access rules
-
-.
 
 #### Specifics
 
