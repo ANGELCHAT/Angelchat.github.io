@@ -2808,35 +2808,34 @@ or **Activate Chat** without `chat.access` stored session groups are used as new
 | Required scopes| `access_rules:rw`                                                             |
 
 
-| Parameter      | Required     | Data type | Notes                         |
-| -------------- | ------------ | --------- | ----------------------------- |
-| `access`__*__  | Yes          | `object`  | Destination access            |
-| `rules`__**__  | Yes          | `object`  | Rules to check for scope auto |
-| `description`  | No           | `string`  | Auto chat scopes description  |
+| Parameter       | Required     | Data type | Notes                         |
+| --------------- | ------------ | --------- | ----------------------------- |
+| `access`        | Yes          | `object`  | Destination access            |
+| `access.groups` | Yes          | `[]int`   | Destination groups            |
+| `rules`__**__   | Yes          | `object`  | Rules to check                |
+| `rules.customer_url` | No      | `object`  | Rule that matches on `customer_page.url` from **Login** or `url` from **Update Customer Page** |
+| `rules.customer_domain` | No   | `object`  | Rule that matches on domain of the url above |
+| `rules.customer_*.values` | No | `[]match_object`_*_ | Positive match, may not be used together with `exclude_values` |
+| `rules.customer_*.exclude_values` | No | `[]match_object` | Negative match |
+| `rules.customer_domain` | No   | `object`  | Rule that matches on customer geolocation |
+| `rules.customer_domain.values` | Yes | `[]geolocation_object`__**__ | array of objects with optional values, at least one must be set; matches when at least one subrule matches |
+| `description`   | No           | `string`  | Auto chat scopes description  |
 
-__*__ `access` object:
-    * `groups`: `[1, 2]`
+__*__ `<match_object>` structure:
 
-__**__ `rules` possible rules:
-  * `customer_url.<string_filter_type>` - matches on `customer_page.url` from **Login** or `url` from **Update Customer Page**
-    * `<string_filter_type>` possible values (only one is allowed for single customer_url):
-      * `values` (array of `match_object`)
-      * `exclude_values` (array of `match_object`)
-    * `<match_object>` structure:
-      * `value` - value to match (`string`)
-      * `exact_match` - if exact match, if set to `false` a `match_object.value` will be matched as substring of `customer_url`
-  * `customer_domain.<string_filter_type>` - works same as rule above but works on domain part only
-    * `<string_filter_type>` possible values (only one is allowed for single customer_url):
-      * `values` (array of `match_object`)
-      * `exclude_values` (array of `match_object`)
-    * `<match_object>` structure:
-      * `value` - value to match (`string`)
-      * `exact_match` - if exact match, if set to `false` a `match_object.value` will be matched as substring of `customer_url`
-  * `customer_geolocation.values` - array of objects with optional values, at least one must be set; matches when at least one subrule matches
-    * `country`, eg. "United States
-    * `country_code`, eg. "US"
-    * `region`, eg. "California"
-    * `city`, eg. "Mountain View"
+| Parameter   | Required | Data type | Notes |
+| ----------- | -------- | --------- | ----- |
+| `value`     | Yes      | `string`  | value to match |
+| `exact_match` | No     | `bool`    | if exact match, if set to `false` a `match_object.value` will be matched as substring of customer url or domain |
+
+__**__ `geolocation_object` structure:
+
+| Parameter   | Required | Data type | Example |
+| ----------- | -------- | --------- | ----- |
+| `country`   | No | `string` | "United States |
+| `country_code` | No | `string` | "US" |
+| `region` | No | `string` | "California" |
+| `city` | No | `string` | "Mountain View" |
 
 
 </Text>
@@ -2863,11 +2862,13 @@ curl -X POST \
           }]
         },
         "customer_geolocation": {
-          "values": [{
+          "values": [
+            {
               "country": "United States",
               "country_code": "US"
             }
-        }]
+          ]
+        }
       }
     }'
 ```
@@ -2924,29 +2925,20 @@ curl -X POST \
      [
         {
             "id": "1faad6f5f1d6e8fdf27e8af9839783b7",
-            "description": "Chats from Facebook or Twitter",
+            "description": "Chats on livechat.com from United States",
             "access": {
                 "groups": [
                     0
                 ]
             },
             "rules": {
-                "chat_properties": {
-                    "facebook": {
-                        "page_id": {
-                            "values": [
-                                "63121487121"
-                            ]
-                        }
-                    },
-                    "source": {
-                        "type": {
-                            "values": [
-                                "facebook",
-                                "twitter"
-                            ]
-                        }
+                "customer_geolocation": {
+                  "values": [
+                    {
+                      "country": "United States",
+                      "country_code": "US"
                     }
+                  ]
                 },
                 "customer_url": {
                     "values": [
