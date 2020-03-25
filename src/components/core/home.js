@@ -2,7 +2,7 @@ import React from "react";
 // /** @jsx jsx */ import { jsx } from "@emotion/core";
 // import { Link } from "gatsby";
 // import styled from "@emotion/styled";
-// import { LiveChatLogo, CategoryIcon } from "./icons";
+// import { AngelChatLogo, CategoryIcon } from "./icons";
 // import { useAllCategoriesMeta } from "../../hooks";
 // import { css } from "@emotion/core";
 
