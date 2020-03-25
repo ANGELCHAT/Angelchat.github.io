@@ -3,7 +3,7 @@
     {
       "slug": "getting-started",
       "title": "Getting Started",
-      "desc": "LiveChat Platform provides multiple possibilites. Start your journey here!",
+      "desc": "AngelChat Platform provides multiple possibilites. Start your journey here!",
       "color": "67, 132, 245",
       "items": [
         {
@@ -13,8 +13,8 @@
           "color": "67, 132, 245"
         },
         {
-          "slug": "installing-livechat",
-          "title": "Installing LiveChat",
+          "slug": "installing-angelchat",
+          "title": "Installing AngelChat",
           "desc": "",
           "color": "67, 132, 245"
         },
@@ -29,7 +29,7 @@
     {
       "slug": "messaging",
       "title": "Messaging",
-      "desc": "LiveChat Platform provides multiple possibilites. Start your journey here!",
+      "desc": "AngelChat Platform provides multiple possibilites. Start your journey here!",
       "color": "209, 52, 91",
       "items": [
         {
