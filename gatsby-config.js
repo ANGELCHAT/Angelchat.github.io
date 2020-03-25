@@ -10,10 +10,10 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     siteUrl: "https://github.com/angelchat/angelchat.developers",
-    title: "LiveChat Platform Docs & API Reference",
+    title: "AngelChat Platform Docs & API Reference",
     description:
-      "The LiveChat Platform offers much more than just a messaging tool. There's a number of possibilities that help you grow a business, which brings customer satisfaction.",
-    author: "@livechat"
+      "The AngelChat Platform offers much more than just a messaging tool. There's a number of possibilities that help you grow a business, which brings customer satisfaction.",
+    author: "@angelchat"
   },
   pathPrefix: process.env.PATH_PREFIX || "/docs",
   plugins: [
