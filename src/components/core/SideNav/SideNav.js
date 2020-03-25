@@ -16,7 +16,7 @@ import {
   useScrollSpy
 } from "../../../hooks";
 import { Link } from "gatsby";
-import { PopperTooltip } from "@livechat/design-system";
+import { PopperTooltip } from "@angelchat/angelchat.designsys";
 import { VersionContext } from "../../../contexts";
 import { getVersionColor } from "../../../utils";
 
