@@ -130,7 +130,7 @@ const Header = () => {
     <HeaderWrapper id="header">
       <LogoWrapper>
         <a href="/">
-          <LiveChatLogo
+          <AngelChatLogo
             style={{ margin: "0 10px -6px 0", display: "block" }}
             width={80}
           />
