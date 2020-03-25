@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { Button } from "@livechat/design-system";
+import { Button } from "@angelchat/Angelchat.designsys";
 import { LinkIcon } from "../core/icons";
 import { Link } from "gatsby";
 
-import imgMessaging from "images/livechat-platform-messaging.png";
-import imgExtendUI from "images/livechat-platform-extend-interfaces.png";
-import imgDataReporting from "images/livechat-platform-data-reporting.png";
+import imgMessaging from "images/angelchat-platform-messaging.png";
+import imgExtendUI from "images/angelchat-platform-extend-interfaces.png";
+import imgDataReporting from "images/angelchat-platform-data-reporting.png";
 
 const HeadingLink = styled.a`
   color: inherit;
