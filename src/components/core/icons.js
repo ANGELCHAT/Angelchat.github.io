@@ -175,7 +175,7 @@ export const CategoryIcon = ({ category, ...props }) => {
   }
 };
 
-export const LiveChatLogo = props => (
+export const AngelChatLogo = props => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 221 122.5">
     <path
       d="M49.2 120.7c-0.6 0-1.3-0.2-1.8-0.5 -1-0.6-1.7-1.8-1.7-3l0.1-21.3H22.6c-14.3 0-20.1-5.8-20.1-20.1V22.5C2.5 8.2 8.3 2.4 22.6 2.4h176.9c15.8 0 18.9 7.4 18.9 20.1v53.4c0 14.3-5.8 20.1-20.1 20.1H99.7l-49 24.5C50.2 120.6 49.7 120.7 49.2 120.7z"
