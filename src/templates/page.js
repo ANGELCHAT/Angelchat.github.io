@@ -3,7 +3,7 @@ import { graphql, Link, navigate } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 
-import "@livechat/design-system/dist/design-system.css";
+import "@angelchat/design-system/dist/design-system.css";
 import "normalize.css";
 import "../components/core/fonts.css";
 import "../components/core/layout.css";
