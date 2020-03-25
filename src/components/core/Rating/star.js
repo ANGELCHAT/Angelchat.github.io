@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import styled from "@emotion/styled";
-import { PopperTooltip } from "@livechat/design-system";
+import { PopperTooltip } from "@angelchat/angelchat.designsys";
 import { StarIcon } from "../../core/icons";
 
 const Container = styled.div`
