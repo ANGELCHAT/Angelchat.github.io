@@ -2,7 +2,7 @@ import { useContext } from "react";
 /** @jsx jsx */ import { jsx, css } from "@emotion/core";
 import { Link } from "gatsby";
 import styled from "@emotion/styled";
-import { LiveChatLogo, CategoryIcon } from "./icons";
+import { AngelChatLogo, CategoryIcon } from "./icons";
 import { useAllCategoriesMeta } from "../../hooks";
 import { getVersionColor } from "../../utils";
 import { VersionContext } from "../../contexts";
