@@ -1,12 +1,12 @@
-# LiveChat Docs
+# AngelChat Readme
 
-Hello 👋!
+Greetings!
 
-The source (markdown & assets) for all of the APIs documentations. Rendered here: https://docs.livechatinc.com/
+The source (markdown & assets) for all of the APIs documentations. Rendered here: https://github.com/angelchat/angelchat.github.io/
 
-## If you're new to LiveChat
+## If you're new to AngelChat
 
-[LiveChat](https://www.livechatinc.com/) is an online customer service software with live support, help desk software and web analytics capabilities. It's used by more than 20,000 companies all over the world. You can find more information here: [LiveChat for Developers](https://developers.livechatinc.com/).
+[AngelChat](https://gitter.im/angelchatio/) is an online customer service software with live support, help desk software and web analytics capabilities. It's used by more than 20,000 companies all over the world. You can find more information here: [AngelChat for Developers](https://github.com/angelchat/Angelchat.developers).
 
 ## Support & Feedback
 
