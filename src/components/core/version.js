@@ -5,7 +5,7 @@ import {
   DropdownList,
   Button,
   PopperTooltip
-} from "@livechat/design-system";
+} from "@angelchat/angelchat.designsys";
 import { VERSIONS_GROUPS } from "../../constant";
 import { versionToString, getVersionColor } from "../../utils";
 import { WarningIcon } from "./icons";
@@ -117,10 +117,10 @@ const Warning = ({ selectedVersion, versionColor, versions }) => (
       <p style={{ marginBottom: "10px" }}>
         If you have any questions, please let us know at{" "}
         <a
-          href="mailto:developers@livechatinc.com"
+          href="mailto:tokeneconomy@eclipso.eu"
           style={{ color: "white", textDecoration: "underline" }}
         >
-          developers@livechatinc.com
+          tokeneconomy@eclipso.eu
         </a>
         .
       </p>
