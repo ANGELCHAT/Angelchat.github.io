@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "@emotion/styled";
 
-import { Input } from "@livechat/design-system";
+import { Input } from "@angelchat/angelchat.designsys";
 import { setupDocsearch } from "../../../utils";
 
 export const SearchWrapper = styled.div`
