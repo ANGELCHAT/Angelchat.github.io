@@ -29,7 +29,7 @@ export const setupDocsearch = () => {
   }
   window.docsearch({
     apiKey: process.env.GATSBY_ALGOLIA_API_KEY,
-    indexName: "livechatinc",
+    indexName: "angelchatio",
     inputSelector: "#search",
     debug: false,
     handleSelected: function (input, event, suggestion, datasetNumber, context) {
@@ -44,7 +44,7 @@ export const setupDocsearch = () => {
 
         // removes the hardcoded path from Algolia
         navigate(
-          suggestion.url.replace("https://developers.livechatinc.com/docs/", "")
+          suggestion.url.replace("https://github.com/Angelchat/Angelchat.developers/", "")
         );
       }
     }
