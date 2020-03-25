@@ -66,7 +66,7 @@ function SEO({ desc, lang, meta, keywords, title }) {
     window.__lc.license = 1520;
     (function() {
       var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
-      lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/staging/tracking.js';
+      lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.angelchat.com/staging/tracking.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
     })();
     `}
