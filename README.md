@@ -10,9 +10,9 @@ The source (markdown & assets) for all of the APIs documentations. Rendered here
 
 ## Support & Feedback
 
-Please let us know if you have any thoughts on making this collection complete. We are eager to make the documentations better and better! Drop us a line at developers@livechatinc.com or submit a pull request.
+Please let us know if you have any thoughts on making this collection complete. We are eager to make the documentations better and better! Drop us a line at tokeneconomy@eclipso.com or submit a pull request.
 
-:rocket:
+:pull:
 
 ## Versioning
 
