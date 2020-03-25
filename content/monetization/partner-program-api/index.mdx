@@ -3,12 +3,12 @@ weight: 30
 category: "monetization"
 title: "Partner Program API"
 tagline: "Pull data in and out of the Partner Program."
-desc: "Getting started with the LiveChat Partners API? See our API documentation to make the best use of partnership."
+desc: "Getting started with the AngelChat Partners API? See our API documentation to make the best use of partnership."
 ---
 
 # Introduction
 
-LiveChat Partner Program API allows you to build tools that will help you make a better use of your data. The API is 100% open, so it’s up to you what you create.
+AngelChat Partner Program API allows you to build tools that will help you make a better use of your data. The API is 100% open, so it’s up to you what you create.
 
 <Section>
 
@@ -16,7 +16,7 @@ LiveChat Partner Program API allows you to build tools that will help you make a
 
 ## API URL
 
-`https://api.livechatinc.com`
+`https://github.com/apps/angelchat`
 
 </Text>
 
@@ -43,7 +43,7 @@ LiveChat Partner Program API allows you to build tools that will help you make a
 <CodeSample path={'EXAMPLE REQUEST'}>
 
 ```shell
-curl -I https://api.livechatinc.com/v2/partners/status
+curl -I https://github.com/apps/angelchat/v2/partners/status
 ```
 
 </CodeSample>
@@ -61,7 +61,7 @@ curl -I https://api.livechatinc.com/v2/partners/status
 
 Each API request requires an authorization header to identify the Partner. Authorization is provided by a unique API token.
 
-You can create your token in the [API tokens section](https://partners.livechatinc.com/dashboard/account/tokens) in Dashboard.
+You can create your token in the [API tokens section](https://github.com/apps/angelchat) in Dashboard.
 
 </Text>
 
@@ -71,7 +71,7 @@ You can create your token in the [API tokens section](https://partners.livechati
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners \
+	--url https://github.com/apps/angelchat/v2/partners \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -137,7 +137,7 @@ You can find all the requests from the Partner Program API in Postman. In our co
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners \
+	--url https://github.com/apps/angelchat/v2/partners \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -159,8 +159,8 @@ curl --request GET \
   "send_reseller_weekly_summary": true,
   "affiliate": {
 	"livechat": {
-	  "url": "https://www.livechatinc.com/?a=xyz&utm_source=PP",
-      "short_url": "https://lc.chat/zxc",
+	  "url": "https://github.com/apps/angelchat/?a=xyz&utm_source=PP",
+      "short_url": "https://ac.chat/zxc",
       "current_commission": {
         "percent": 20,
         "end_timestamp": ""
@@ -168,15 +168,15 @@ curl --request GET \
 	},
 	"chatbot": {
 	  "url": "https://www.chatbot.com/?a=xyz&utm_source=PP",
-      "short_url": "https://lc.chat/zxcv",
+      "short_url": "https://ac.chat/zxcv",
       "current_commission": {
         "percent": 20,
         "end_timestamp": ""
       }
 	},
 	"partner_program": {
-	  "url": "https://www.partners.livechatinc.com/?a=xyz&utm_source=PP",
-      "short_url": "https://lc.chat/zxcvb",
+	  "url": "https://github.com/apps/angelchat/?a=xyz&utm_source=PP",
+      "short_url": "https://ac.chat/zxcvb",
       "current_commission": {
         "percent": 20,
         "end_timestamp": ""
@@ -269,7 +269,7 @@ curl --request GET \
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners/stats \
+	--url https://github.com/apps/angelchat/v2/partners/stats \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -344,7 +344,7 @@ curl --request GET \
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners/coupons \
+	--url https://github.com/apps/angelchat/v2/partners/coupons \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -399,7 +399,7 @@ curl --request GET \
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners/earnings \
+	--url https://github.com/apps/angelchat/v2/partners/earnings \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -480,7 +480,7 @@ curl --request GET \
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners/billing \
+	--url https://github.com/apps/angelchat/v2/partners/billing \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -526,7 +526,7 @@ curl --request GET \
 - `company` - **required** - company name (if business) or full name (if individual)
 - `address` - **required**
 - `city` - **required**
-- `country` - **required** - country code, one of [these](https://api.livechatinc.com/v2/partners/data/countries)
+- `country` - **required** - country code, one of [these](https://github.com/apps/angelchat/v2/partners/data/countries)
 - `paypal` - **required** - PayPal login (email)
 - `zip_code` - ZIP / Postal code
 - `vat` - VAT
@@ -569,7 +569,7 @@ curl --request GET \
 
 ```shell
 curl --request POST \
-	--url https://api.livechatinc.com/v2/partners/withdrawals \
+	--url https://github.com/apps/angelchat/v2/partners/withdrawals \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -629,7 +629,7 @@ curl --request POST \
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners/withdrawals \
+	--url https://github.com/apps/angelchat/v2/partners/withdrawals \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -701,7 +701,7 @@ curl --request GET \
 ```shell
 curl --request POST \
 	--data 'label=My first API token' \
-	--url https://api.livechatinc.com/v2/partners/tokens \
+	--url https://github.com/apps/angelchat/v2/partners/tokens \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -751,7 +751,7 @@ curl --request POST \
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners/tokens \
+	--url https://github.com/apps/angelchat/v2/partners/tokens \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -815,7 +815,7 @@ curl --request GET \
 
 ```shell
 curl --request DELETE \
-	--url https://api.livechatinc.com/v2/partners/tokens/1 \
+	--url https://github.com/apps/angelchat/v2/partners/tokens/1 \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -875,8 +875,8 @@ curl --request DELETE \
 
 ```shell
 curl --request POST \
-	--url https://api.livechatinc.com/v2/partners/affiliates/campaigns?product=livechat \
-	--data 'name=New campaign&link=https://www.livechatinc.com/features/&trial_duration=45&coupon_id=1' \
+	--url https://github.com/apps/angelchat/v2/partners/affiliates/campaigns?product=livechat \
+	--data 'name=New campaign&link=https://github.com/apps/angelchat/features/&trial_duration=45&coupon_id=1' \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -886,11 +886,11 @@ curl --request POST \
 
 ```json
 {
-  "product": "livechat",
+  "product": "angelchat",
   "name": "New campaign",
   "slug": "pp_new-campaign",
-  "url": "https://www.livechatinc.com/features/?a=xyz&utm_campaign=pp_new-campaign",
-  "short_url": "https://lc.chat/abc",
+  "url": "https://github.com/apps/angelchat/features/?a=xyz&utm_campaign=pp_new-campaign",
+  "short_url": "https://ac.chat/abc",
   "creation_timestamp": "2018-03-06 11:30:40"
   "trial_duration": 45,
   "discount": "$25 discount",
@@ -934,7 +934,7 @@ curl --request POST \
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners/affiliates/campaigns \
+	--url https://github.com/apps/angelchat/v2/partners/affiliates/campaigns \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -947,10 +947,10 @@ curl --request GET \
   "result": [
     {
 	  "active": true,
-	  "product": "livechat",
+	  "product": "angelchat",
       "name": "Hello World!",
       "slug": "pp_hello-world",
-      "url": "https://www.livechatinc.com/pricing/?a=xyz&utm_campaign=pp_hello-world&utm_source=PP",
+      "url": "https://github.com/apps/angelchat/pricing/?a=xyz&utm_campaign=pp_hello-world&utm_source=PP",
       "short_url": "https://lc.chat/abc",
       "creation_timestamp": "2018-03-06 23:42:19"
       "trial_duration": 30,
@@ -961,7 +961,7 @@ curl --request GET \
 	  "creation_timestamp": "2019-11-21 14:22:14",
 	  "name": "Test Campaign",
 	  "product": "chatbot",
-	  "short_url:" "https://lc.chat/xyz",
+	  "short_url:" "https://ac.chat/xyz",
 	  "slug": "pp_test-campaign"
 	  "trial_duration": 7,
 	  "url": "https://chatbot.com/?a=xyzK&utm_campaign=pp_test-campaign&utm_source=PP"
@@ -989,7 +989,7 @@ curl --request GET \
 
 #### Query Parameters
 
-- `product` - **required** - product (`livechat`, `chatbot` or `partner_program` itself)
+- `product` - **required** - product (`angelchat`, `chatbot` or `partner_program` itself)
 - `slug` - **required** - campaign slug
 
 #### Headers
@@ -1011,7 +1011,7 @@ curl --request GET \
 
 ```shell
 curl --request DELETE \
-	--url https://api.livechatinc.com/v2/partners/affiliates/campaigns?product=livechat&slug=pp_hello-world \
+	--url https://github.com/apps/angelchat/v2/partners/affiliates/campaigns?product=livechat&slug=pp_hello-world \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -1055,7 +1055,7 @@ curl --request DELETE \
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners/affiliates/licenses \
+	--url https://github.com/apps/angelchat/v2/partners/affiliates/licenses \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -1067,7 +1067,7 @@ curl --request GET \
 {
   "result": [
     {
-      "product": "livechat",
+      "product": "angelchat",
       "creation_timestamp": "2019-10-25 14:55:57",
       "end_timestamp": "2019-11-25 12:55:54",
       "active": true,
@@ -1144,7 +1144,7 @@ curl --request GET \
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners/affiliates/performance \
+	--url https://github.com/apps/angelchat/v2/partners/affiliates/performance \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -1156,7 +1156,7 @@ curl --request GET \
 {
   "result": [
     {
-      "product": "livechat",
+      "product": "angelchat",
       "campaign_name": "Newsletter",
       "utm_campaign": "pp_newsletter",
       "utm_medium": "",
@@ -1233,7 +1233,7 @@ curl --request GET \
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners/affiliates/partners-referred \
+	--url https://github.com/apps/angelchat/v2/partners/affiliates/partners-referred \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -1310,7 +1310,7 @@ curl --request GET \
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners/affiliates/history \
+	--url https://github.com/apps/angelchat/v2/partners/affiliates/history \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 </CodeSample>
@@ -1413,11 +1413,11 @@ curl --request GET \
 
 - `client_name` - **required** - client's full name (min. 5 characters)
 - `client_email` - **required** - client's email address
-- [_only for `livechat` product_] `payment_origin` - **required** - who would manage subscription: `client` or `partner` (you)
+- [_only for `angelchat` product_] `payment_origin` - **required** - who would manage subscription: `client` or `partner` (you)
 - `purchase_order` - a custom parameter
-- [_only for `livechat` product_] `data_center` - database location: `dal` (USA) or `fra` (EU)
-- [_only for `livechat` product_] `trial_duration` - only for the `client` payment origin - the number of days of a trial period (min. 14 - default, max. 60)
-- [_only for `livechat` product_] `coupon_id` - only for the `client` payment origin - the ID of the coupon assigned to a Partner (will apply a discount)
+- [_only for `angelchat` product_] `data_center` - database location: `dal` (USA) or `fra` (EU)
+- [_only for `angelchat` product_] `trial_duration` - only for the `client` payment origin - the number of days of a trial period (min. 14 - default, max. 60)
+- [_only for `angelchat` product_] `coupon_id` - only for the `client` payment origin - the ID of the coupon assigned to a Partner (will apply a discount)
 
 #### Response
 
@@ -1436,7 +1436,7 @@ curl --request GET \
 ```json
 {
   "license": "123",
-  "product": "livechat",
+  "product": "angelchat",
   "creation_timestamp": "2020-02-11 13:18:53",
   "end_timestamp": "2020-02-25 13:18:53",
   "client_name": "Joe Doe",
@@ -1488,7 +1488,7 @@ curl --request GET \
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners/solutions/licenses \
+	--url https://github.com/apps/angelchat/v2/partners/solutions/licenses \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 </CodeSample>
@@ -1500,7 +1500,7 @@ curl --request GET \
   "result": [
     {
       "license": "123",
-      "product": "livechat",
+      "product": "angelchat",
       "client_name": "Joe Doe",
       "client_email": "joe@example.com",
       "cc_added": false,
@@ -1563,7 +1563,7 @@ curl --request GET \
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners/solutions/licenses/livechat/123 \
+	--url https://github.com/apps/angelchat/v2/partners/solutions/licenses/livechat/123 \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -1623,7 +1623,7 @@ curl --request GET \
 
 #### Path Parameters
 
-- `<product>` - **required** - product (`livechat` or `chatbot`)
+- `<product>` - **required** - product (`angelchat` or `chatbot`)
 - `<license_id>` - **required** - license ID
 
 #### Body
@@ -1646,7 +1646,7 @@ curl --request GET \
 
 ```shell
 curl --request PUT \
-	--url https://api.livechatinc.com/v2/solutions/licenses/livechat/123 \
+	--url https://github.com/apps/angelchat/v2/solutions/licenses/angelchat/123 \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>' \
 	--data 'client_name=Jane Doe'
 ```
@@ -1664,7 +1664,7 @@ curl --request PUT \
 
 ## Get License Operators
 
-`GET /v2/partners/solutions/licenses/livechat/<license_id>/operators` - get the list of a LiveChat license's operators
+`GET /v2/partners/solutions/licenses/angelchat/<license_id>/operators` - get the list of a AngelChat license's operators
 
 #### Headers
 
@@ -1689,7 +1689,7 @@ curl --request PUT \
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners/solutions/licenses/livechat/123/operators \
+	--url https://github.com/apps/angelchat/v2/partners/solutions/licenses/livechat/123/operators \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -1743,7 +1743,7 @@ curl --request GET \
 Struct of **user** object:
 
 - `email` - **required** - user email
-- `role` - **required** - `administrator` or `agent` ([learn more about the roles](https://www.livechatinc.com/help/livechat-roles-owner-administrators-and-agents/))
+- `role` - **required** - `administrator` or `agent` ([learn more about the roles](https://github.com/apps/angelchat/help/livechat-roles-owner-administrators-and-agents/))
 
 #### Response
 
@@ -1761,7 +1761,7 @@ Struct of **user** object:
 
 ```shell
 curl --request POST \
-	--url https://api.livechatinc.com/v2/partners/solutions/licenses/livechat/123/operators \
+	--url https://github.com/apps/angelchat/v2/partners/solutions/licenses/angelchat/123/operators \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>' \
 	--data '{
 		"operators": [
@@ -1833,7 +1833,7 @@ curl --request POST \
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners/solutions/licenses/321/invoices \
+	--url https://github.com/apps/angelchat/v2/partners/solutions/licenses/321/invoices \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -1905,7 +1905,7 @@ curl --request GET \
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners/solutions/licenses/321/invoices/123 \
+	--url https://github.com/apps/angelchat/v2/partners/solutions/licenses/321/invoices/123 \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 
@@ -1941,7 +1941,7 @@ curl --request GET \
 
 ```shell
 curl --request GET \
-	--url https://api.livechatinc.com/v2/partners/solutions/history \
+	--url https://github.com/apps/angelchat/v2/partners/solutions/history \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
 </CodeSample>
@@ -1986,7 +1986,7 @@ curl --request GET \
 
 ## Create Subscription
 
-`POST /v2/partners/solutions/licenses/livechat/<license_id>/subscription` - create a new subscription for LiveChat license
+`POST /v2/partners/solutions/licenses/angelchat/<license_id>/subscription` - create a new subscription for AngelChat license
 
 #### Headers
 
@@ -2022,7 +2022,7 @@ curl --request GET \
 
 ## Update Subscription
 
-`PUT /v2/partners/solutions/licenses/livechat/<license_id>/subscription` - update a subscription for LiveChat license
+`PUT /v2/partners/solutions/licenses/angelchat/<license_id>/subscription` - update a subscription for AngelChat license
 
 #### Headers
 
@@ -2057,7 +2057,7 @@ curl --request GET \
 
 ## Close Subscription
 
-`DELETE /v2/partners/solutions/licenses/livechat/<license_id>/subscription` - close a subscription for a LiveChat license
+`DELETE /v2/partners/solutions/licenses/angelchat/<license_id>/subscription` - close a subscription for a AngelChat license
 
 #### Headers
 
@@ -2091,7 +2091,7 @@ curl --request GET \
 
 ## Update License Billing
 
-`PUT /v2/partners/solutions/licenses/livechat/<license_id>/billing` - update the subscription billing information for a LiveChat license
+`PUT /v2/partners/solutions/licenses/angelchat/<license_id>/billing` - update the subscription billing information for a AngelChat license
 
 #### Headers
 
@@ -2123,7 +2123,7 @@ curl --request GET \
 
 ## Transfer License
 
-`POST /v2/partners/solutions/licenses/livechat/<license_id>/transfer` - transfer a LiveChat license to the client
+`POST /v2/partners/solutions/licenses/angelchat/<license_id>/transfer` - transfer a AngelChat license to the client
 
 #### Headers
 
@@ -2154,7 +2154,7 @@ curl --request GET \
 
 ```shell
 curl --request POST \
-	--url https://api.livechatinc.com/v2/partners/solutions/licenses/transfer \
+	--url https://github.com/apps/angelchat/v2/partners/solutions/licenses/transfer \
 	--data 'new_owner=joe@doe.com&password=mysecretpassword' \
 	--header 'Authorization: Bearer <YOUR_API_TOKEN>'
 ```
@@ -2313,12 +2313,12 @@ curl --request POST \
 - `phone` - **required** - phone number
 - `description` - **required** - the description dispalyed in the profile details (min. 10 characters)
 - `short_description` - **required** - the description displayed in the Expert tile (min. 10 characters)
-- `country` - **required** - country code, one of [these](https://api.livechatinc.com/v2/partners/data/countries)
+- `country` - **required** - country code, one of [these](https://github.com/apps/angelchat/v2/partners/data/countries)
 - `website` - **required** - website URL
-- `categories` - **required** - an array of categories (codes); [available categories](https://api.livechatinc.com/v2/partners/data/categories/expert)
+- `categories` - **required** - an array of categories (codes); [available categories](https://github.com/apps/angelchat/v2/partners/data/categories/expert)
 - `projects` - **required** - an array of projects (URLs)
 - `agents` - **required** if one of the categories is `outsourcing-customer-service` or `lead-generation` - number of agents, accepted values: `1-5`, `6-15`, `16-30`, `31-50`, `51+`
-- `languages` - **required** if one of the categories is `outsourcing-customer-service` or `lead-generation` - an array of languages (codes); [available languages](https://api.livechatinc.com/v2/partners/data/languages)
+- `languages` - **required** if one of the categories is `outsourcing-customer-service` or `lead-generation` - an array of languages (codes); [available languages](https://github.com/apps/angelchat/v2/partners/data/languages)
 - `hour_rate` - optional - minimum hourly rate
 - `project_rate` - optional - minimum project rate
 - `facebook` - optional - the URL to the Facebook page
@@ -2375,9 +2375,9 @@ curl --request POST \
   "hour_rate": "50",
   "project_rate": "500",
   "country": "US",
-  "website": "https://partners.livechatinc.com",
+  "website": "https://github.com/apps/angelchat",
   "facebook": "",
-  "twitter": "https://twitter/LiveChatProgram",
+  "twitter": "https://twitter/AngelChatProgram",
   "linkedin": "",
   "googleplus": "",
   "categories": [
@@ -2415,12 +2415,12 @@ curl --request POST \
 - `phone` - **required** - phone number
 - `description` - **required** - the description displayed in profile details (min. 10 characters)
 - `short_description` - **required** - the description displayed in Expert tile (min. 10 characters)
-- `country` - **required** - country code, one of [these](https://api.livechatinc.com/v2/partners/data/countries)
+- `country` - **required** - country code, one of [these](https://github.com/apps/angelchat/v2/partners/data/countries)
 - `website` - **required** - website URL
-- `categories` - **required** - array of categories (codes); [available categories](https://api.livechatinc.com/v2/partners/data/categories/expert)
+- `categories` - **required** - array of categories (codes); [available categories](https://github.com/apps/angelchat/v2/partners/data/categories/expert)
 - `projects` - **required** - array of projects (URLs)
 - `agents` - **required** if one of the categories is `outsourcing-customer-service` or `lead-generation` - number of agents, accepted values: `1-5`, `6-15`, `16-30`, `31-50`, `51+`
-- `languages` - **required** if one of the categories is `outsourcing-customer-service` or `lead-generation` - an array of languages (codes); [available languages](https://api.livechatinc.com/v2/partners/data/languages)
+- `languages` - **required** if one of the categories is `outsourcing-customer-service` or `lead-generation` - an array of languages (codes); [available languages](https://github.com/apps/angelchat/v2/partners/data/languages)
 - `hour_rate` - optional - minimum hourly rate
 - `project_rate` - optional - minimum project rate
 - `facebook` - optional - the URL to the Facebook page
