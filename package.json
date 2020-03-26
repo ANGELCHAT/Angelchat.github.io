@@ -2,7 +2,7 @@
   "name": "angelchat-public-docs",
   "description": "AngelChat Docs",
   "version": "1.0.0",
-  "author": "@livechat",
+  "author": "@angelchat",
   "engines": {
     "node": "^12.9.0"
   },
