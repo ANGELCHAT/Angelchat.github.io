@@ -2,7 +2,7 @@
 
 Greetings!
 
-The source (markdown & assets) for all of the APIs documentations. Rendered here: https://github.com/angelchat/angelchat.github.io/
+The source (markdown & assets) for all of the APIs documentations. Rendered here: https://angelchat.github.io/
 
 ## If you're new to AngelChat
 
